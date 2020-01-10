@@ -24,7 +24,7 @@
             <input type="hidden" value="${contact.id}" name="id">
             <button>Delete</button>
         </form>
-        <a href="${'/contacts/edit?id=' += ${contact.id}}">Edit</a>
+        <a href="${'/contacts/edit?id='.concat(contact.id)}">Edit</a>
     </c:forEach>
 
     <h2>Add Contact</h2>
