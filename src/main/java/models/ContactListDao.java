@@ -1,11 +1,13 @@
+package models;
+
 import java.util.ArrayList;
 import java.util.List;
 
 
 // TODO: create a branch from your MVC solution tag called "mvc-contacts" and add this class
-// TODO: create a Contact class entity that maps contacts correctly
-// TODO: create a Contacts interface with the required methods
-// TODO: add a method to the DaoFactory to get an implementation of the contacts DAO
+// TODO: create a models.Contact class entity that maps contacts correctly
+// TODO: create a models.Contacts interface with the required methods
+// TODO: add a method to the models.DaoFactory to get an implementation of the contacts DAO
 // TODO: create the needed controller and view code to give the user an interface that will CRUD contacts
 
 public class ContactListDao implements Contacts {

@@ -1,3 +1,7 @@
+package controllers;
+
+import models.DaoFactory;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -12,7 +16,7 @@ public class ContactViewServlet extends HttpServlet {
         if (request.getParameter("id") != null) {
             long id = Long.parseLong(request.getParameter("id"));
             request.setAttribute("contact", DaoFactory.getContactsDao().getContactById(id));
-            request.getRequestDispatcher("/contacts-show.jsp").forward(request, response);
+            request.getRequestDispatcher("/contacts/show.jsp").forward(request, response);
         } else {
             response.sendRedirect("/contacts");
         }
