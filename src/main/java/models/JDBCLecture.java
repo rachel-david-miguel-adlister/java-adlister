@@ -22,7 +22,7 @@ public class JDBCLecture {
 
             // ======================== CREATING A STATEMENT OBJECT
 
-//            Statement statement = conn.createStatement();
+            Statement statement = conn.createStatement();
 
 
             // ======================== GETTING A SINGLE AND LIST OF RESULTS
@@ -30,9 +30,9 @@ public class JDBCLecture {
 //            String query = "SELECT * FROM albums";
 
 //            ResultSet rs = statement.executeQuery(query);
-//
+
 //            rs.next();
-//
+
 //            System.out.println(rs.getString(1));
 //            System.out.println(rs.getString(2));
 //            System.out.println(rs.getString(3));
@@ -64,7 +64,7 @@ public class JDBCLecture {
 
 //            rs.beforeFirst();
 //            rs.next();
-//
+
 //            Album album = new Album(rs.getLong("id"),
 //                rs.getString("artist"),
 //                rs.getString("name"),
@@ -73,34 +73,36 @@ public class JDBCLecture {
 //                rs.getString("genre")
 //            );
 //
+//            System.out.println(album);
 //            System.out.println(album.getId());
 //            System.out.println(album.getArtist());
 //            System.out.println(album.getName());
 //            System.out.println(album.getReleaseDate());
-//            System.out.println(album.getReleaseDate());
+//            System.out.println(album.getSales());
+//            System.out.println(album.getGenre());
 
             // ======================== UPDATE A RECORD
 
-//            Album updateAlbum = new Album(
-//                    2,
-//                    "Prince",
-//                    "Purple Rain",
-//                    1984,
-//                    50,
-//                    "amazing"
-//            );
+            Album updateAlbum = new Album(
+                    2,
+                    "Prince",
+                    "Purple Rain",
+                    1984,
+                    50,
+                    "amazing"
+            );
+
+            String updateQuery = String.format("UPDATE albums SET artist = '%s', name = '%s', release_date = %d, sales = %f, genre = '%s' WHERE id = %d",
+                    updateAlbum.getArtist(),
+                    updateAlbum.getName(),
+                    updateAlbum.getReleaseDate(),
+                    updateAlbum.getSales(),
+                    updateAlbum.getGenre(),
+                    updateAlbum.getId()
+            );
 //
-//            String updateQuery = String.format("UPDATE albums SET artist = '%s', name = '%s', release_date = %d, sales = %f, genre = '%s' WHERE id = %d",
-//                    updateAlbum.getArtist(),
-//                    updateAlbum.getName(),
-//                    updateAlbum.getReleaseDate(),
-//                    updateAlbum.getSales(),
-//                    updateAlbum.getGenre(),
-//                    updateAlbum.getId()
-//            );
-//
-//            boolean success = statement.execute(updateQuery);
-//            int numberOfRowsEffected = statement.executeUpdate(updateQuery);
+            boolean success = statement.execute(updateQuery);
+            int numberOfRowsEffected = statement.executeUpdate(updateQuery);
 
             // ======================== INSERTING A RECORD
 
@@ -121,7 +123,7 @@ public class JDBCLecture {
 //            );
 //
 //            statement.executeUpdate(insertQuery, Statement.RETURN_GENERATED_KEYS);
-//            rs = statement.getGeneratedKeys();
+//            ResultSet rs = statement.getGeneratedKeys();
 //
 //            if (rs.next()) {
 //                System.out.println("Inserted id is: " + rs.getLong(1));
