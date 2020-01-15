@@ -1,5 +1,9 @@
+package dao;
+
 import com.mysql.cj.jdbc.Driver;
 import dao.Config;
+import models.Ad;
+import models.Ads;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -81,20 +85,20 @@ public class MySQLAdsDao implements Ads {
     public static void main(String[] args) {
 
         // testing all method
-//        Ads adsDao = new MySQLAdsDao();
-//        List<Ad> ads = adsDao.all();
-//        for (Ad ad : ads) {
+//        models.Ads adsDao = new dao.MySQLAdsDao();
+//        List<models.Ad> ads = adsDao.all();
+//        for (models.Ad ad : ads) {
 //            System.out.println(ad);
 //        }
 
         // test insert
-//        Ad adToInsert = new Ad(
+//        models.Ad adToInsert = new models.Ad(
 //                1,
-//                "Test Ad Insert 1",
+//                "Test models.Ad Insert 1",
 //                "This is the first insert test ad"
 //        );
 //
-//        Ads adsDao = new MySQLAdsDao();
+//        models.Ads adsDao = new dao.MySQLAdsDao();
 //        long lastInsertedId = adsDao.insert(adToInsert);
 //        System.out.println(lastInsertedId);
 

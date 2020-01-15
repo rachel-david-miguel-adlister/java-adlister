@@ -1,3 +1,5 @@
+package models;
+
 public class Ad {
     private long id;
     private long userId;
@@ -51,7 +53,7 @@ public class Ad {
 
     @Override
     public String toString() {
-        return "Ad{" +
+        return "models.Ad{" +
                 "id=" + id +
                 ", userId=" + userId +
                 ", title='" + title + '\'' +

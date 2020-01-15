@@ -1,4 +1,6 @@
-import dao.Config;
+package dao;
+
+import models.Ads;
 
 public class DaoFactory {
     private static Ads adsDao;
